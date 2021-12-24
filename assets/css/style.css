@@ -9,7 +9,7 @@
 
 html {
   overflow-x: hidden;
-  /* overflow-y: hidden; */
+  overflow-y: scroll;
 }
 
 .header-container{
@@ -59,14 +59,119 @@ html {
 .header-menu{
   height: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-self: center;
   align-items: center;
+  position: relative;
 }
 
-.header-menu > a{
+.header-menu-title{
   color: white;
   text-decoration: none;
+  transition: 1s;
 }
+
+.header-menu-title:hover{
+  color: white;
+  text-decoration: underline;
+}
+
+.header-menu:hover .header-menu-selection{
+  display: block;
+  position: absolute;
+  margin-top: 300px;
+}
+
+.header-menu-selection{
+  width: 50vw;
+  height: 200px;
+  display: none;
+  background-color: white;
+
+}
+
+.selection-container{
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.selection-type{
+  width: 30%;
+  border-right: solid 2px black;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.selection-type-option{
+  width: 95%;
+  height: 70px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.selection-type-option > a{
+  text-decoration: none;
+  color:#191919;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.selection-type-option > a > img{
+  padding-left: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.selection-feature{
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.selection-title{
+  width: 100%;
+  border-bottom: solid 1px black;
+}
+
+.selection-headphone{
+  width: 90%;
+  height: 90%;
+  color: black;
+  gap: 5%;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.headphone-type{
+  width: 42%;
+}
+
+.dacamp-type  {
+  width: 42%;
+}
+
+.type-list{
+  list-style: none;
+  padding-top: 10px;
+}
+
+.type-list > a{
+  font-size: 16px;
+  text-decoration: none;
+  color:#191919;
+  font-weight: 300;
+}
+
 
 .right{
   height: 100%;
@@ -107,6 +212,29 @@ html {
   align-items: center;
 }
 
+.search-icon{
+  height: 35px;
+  width: 35px;
+  background-color: white;
+  border-radius: 30px;
+  display: flex;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  transition: 0.7s;
+  transform: translate();
+}
+
+.search-input{
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: none;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  width: 100%;
+}
+
 .navbar-link{
   display: flex;
   align-items: center;
@@ -131,10 +259,20 @@ html {
   width: 100%;
 }
 
-.main-promo > img {
+.main-promo > a > img {
   /* position: relative; */
   margin-top: 100px;
   width: 100%;
+}
+
+.page-title{
+  color: black;
+  font-weight: 700;
+  font-size: 35px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-content{
@@ -143,6 +281,25 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
+}
+
+.main-tag{
+  height: 56px;   
+  width: 150px;
+  color: black;
+  font-weight: 700;
+  border: solid 1px black;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.8s;
+}
+
+.main-tag:hover{
+  color: white;
+  background-color: black;
 }
 
 .new-product{
@@ -166,6 +323,22 @@ html {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+}
+
+.promo-item {
+  width: 615px;
+  height: 355px;
+  margin-bottom: 50px;
+}
+
+.promo-item > a > img{
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.promo-item > a > img{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .new-items{
@@ -249,7 +422,7 @@ html {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 
 .promo-banners{
@@ -275,6 +448,115 @@ html {
   border-radius: 10px;
 }
 
+.sort-container{
+  width: 100%;
+  height: 75px; 
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: right;
+  align-items: center;
+  gap: 5px;
+}
+
+.sort-option{
+  font-size: 19px;
+  font-weight: 700;
+  color: black;
+}
+
+.sort-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#product-status{
+  height: 50px;
+  width: 200px;
+  font-size: 16px;
+  border: none;
+  background-color:#EEEEEE;
+  border-radius: 30px;
+  padding-left: 10px;
+}
+
+.left-menu{
+  width: 24%;
+  background-color: white;
+  border-right: solid 1px black;
+}
+
+.brand-filter{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-filter-title{
+  width: 93%;
+  color: black;
+  font-size: 19px;
+  font-weight: 700;
+  padding-bottom: 5px;
+  border-bottom: solid 1px black;
+
+}
+
+.brand-container{
+  width: 93%;
+  margin-top: 10px;
+  height: 300px;
+  background-color: #EEEEEE;
+}
+
+.price-filter{
+  margin-top: 30px;
+}
+
+.price-container{
+  width: 93%;
+  margin-top: 10px;
+  height: 300px;
+}
+
+#price-input{
+  margin-top: 10px;
+  width: 40%;
+}
+
+
+.product-list{
+  width: 76%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding-left: 10px;
+}
+
+/* PHAN TRANG */
+/* Set the style for the a tag */
+.pagination a {
+  color: black;
+  float: left;
+  padding: 12px 18px;
+  text-decoration: none;
+  }
+  /* set the style for the active class */
+  .pagination a.active {
+  background-color: black;
+  color: white;
+  /*Circle Design with CSS*/
+  border-radius: 50%;
+  }
+  /* add background color when user hovers on inactive class */
+  .pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 50%;
+  }
 
 
 
@@ -284,6 +566,7 @@ html {
   width: 100%;
   height: 370px;
   position: absolute;
+  margin-top: 100px;
 }
 
 .bg-light{
