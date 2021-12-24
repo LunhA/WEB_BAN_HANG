@@ -78,18 +78,23 @@ html {
   gap: 30px;
 }
 
-.search-icon{
+/*  */
+
+.navbar-btn{
   height: 35px;
   width: 35px;
   background-color: white;
   border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.7s;
+  transform: translate();
 }
 
-.login-icon{
-  height: 35px;
-  width: 35px;
-  background-color: white;
-  border-radius: 30px;
+.navbar-btn:hover{
+  box-shadow: 0px 0px 5px 5px white;
+  transform: scale(1.2, 1.2);
 }
 
 .cart{
@@ -97,6 +102,25 @@ html {
   width: 45px;
   background-color: white;
   border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-icon{ 
+  height: 80%;
+  width: 80%;
+}
+
+.cart > a > img{
+  height: 60%;
+  width: 60%;
 }
 
 .main-container{
