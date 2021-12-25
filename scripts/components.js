@@ -53,12 +53,7 @@ const AppHeader = {
         </div>
         <div class="right">
 
-            <div class="search-bar"> <input id="search-input" type="search" name="s" placeholder="Gõ để tìm kiếm"
-                    style="border: none; border-bottom: 1px solid #fff; background: none; color: #fff; outline: none; width: 100%;">
-            </div>
-            <div class="navbar-btn search-icon">
-                <img class="navbar-icon" src="assets/images/icons/search-icon.png">
-            </div>
+         
 
             <div class="navbar-btn login-icon"><a class="navbar-link" href=""><img class="navbar-icon"
                         src="assets/images/icons/account.png"></a></div>

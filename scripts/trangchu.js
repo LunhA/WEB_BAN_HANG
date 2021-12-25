@@ -59,4 +59,6 @@ const TrangChu = {
   },
 };
 
-Vue.createApp(TrangChu).mount("#app");
+const app = Vue.createApp(TrangChu);
+app.component("app-header", AppHeader);
+app.mount("#app");
