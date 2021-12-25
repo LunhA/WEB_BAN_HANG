@@ -1,17 +1,17 @@
 const PRODUCT_TYPE = {
-  FULL_SIZED = 'full-sized',
-  IN_EAR = 'in-ear',
-  TRUE_WIRELESS = 'true-wireless',
-  EAR_BUD = 'ear-bud',
-}
+  FULL_SIZED: "full-sized",
+  IN_EAR: "in-ear",
+  TRUE_WIRELESS: "true-wireless",
+  EAR_BUD: "ear-bud",
+};
 
 const PRODUCT_BRANDS = {
-  FOCAL = 'Focal',
-  HIFIMAN = "HiFiMan",
-  MOONDROP = "MOONDROP",
-  SONY = "SONY",
-  APPLE = "Apple",
-}
+  FOCAL: "Focal",
+  HIFIMAN: "HiFiMan",
+  MOONDROP: "MOONDROP",
+  SONY: "SONY",
+  APPLE: "Apple",
+};
 const PRODUCTS = [
   {
     id: 1,
@@ -19,7 +19,7 @@ const PRODUCTS = [
     price: 3990000,
     type: PRODUCT_TYPE.FULL_SIZED,
     brand: PRODUCT_BRANDS.HIFIMAN,
-    image: "../assets/images/products/hifiman_he400se.jpg"
+    image: ".assets/images/products/hifiman_he400se.jpg",
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const PRODUCTS = [
     price: 23000000,
     type: PRODUCT_TYPE.FULL_SIZED,
     brand: PRODUCT_BRANDS.FOCAL,
-    image: "../assets/images/products/focal_celestee.jpg"
+    image: "assets/images/products/focal_celestee.jpg",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const PRODUCTS = [
     price: 29990000,
     type: PRODUCT_TYPE.FULL_SIZED,
     brand: PRODUCT_BRANDS.FOCAL,
-    image: "../assets/images/products/focal_radiance.jpeg"  
+    image: "assets/images/products/focal_radiance.jpeg",
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const PRODUCTS = [
     price: 11900000,
     type: PRODUCT_TYPE.FULL_SIZED,
     brand: PRODUCT_BRANDS.APPLE,
-    image: "../assets/images/products/airpod_max.png"
+    image: "assets/images/products/airpod_max.png",
   },
   {
     id: 5,
@@ -51,7 +51,7 @@ const PRODUCTS = [
     price: 6390000,
     type: PRODUCT_TYPE.FULL_SIZED,
     brand: PRODUCT_BRANDS.SONY,
-    image: "../assets/images/products/wh1000xm4.jpg"
+    image: "assets/images/products/wh1000xm4.jpg",
   },
   {
     id: 6,
@@ -59,7 +59,7 @@ const PRODUCTS = [
     price: 8500000,
     type: PRODUCT_TYPE.FULL_SIZED,
     brand: PRODUCT_BRANDS.HIFIMAN,
-    image: "../assets/images/products/hifiman_sundara.jpg"
+    image: "assets/images/products/hifiman_sundara.jpg",
   },
   {
     id: 7,
@@ -67,7 +67,7 @@ const PRODUCTS = [
     price: 29290000,
     type: PRODUCT_TYPE.FULL_SIZED,
     brand: PRODUCT_BRANDS.FOCAL,
-    image: "../assets/images/products/focal_clear.jpg"
+    image: "assets/images/products/focal_clear.jpg",
   },
   {
     id: 8,
@@ -75,7 +75,7 @@ const PRODUCTS = [
     price: 4990000,
     type: PRODUCT_TYPE.TRUE_WIRELESS,
     brand: PRODUCT_BRANDS.HIFIMAN.APPLE,
-    image: "../assets/images/products/airpod_pro.jpg"
+    image: "assets/images/products/airpod_pro.jpg",
   },
   {
     id: 9,
@@ -83,7 +83,7 @@ const PRODUCTS = [
     price: 4750000,
     type: PRODUCT_TYPE.TRUE_WIRELESS,
     brand: PRODUCT_BRANDS.APPLE,
-    image: "../assets/images/products/airpod_3.jpg"
+    image: "assets/images/products/airpod_3.jpg",
   },
   {
     id: 10,
@@ -91,7 +91,7 @@ const PRODUCTS = [
     price: 5490000,
     type: PRODUCT_TYPE.TRUE_WIRELESS,
     brand: PRODUCT_BRANDS.SONY,
-    image: "../assets/images/products/wf1000xm4.jpeg"
+    image: "assets/images/products/wf1000xm4.jpeg",
   },
   {
     id: 11,
@@ -99,7 +99,7 @@ const PRODUCTS = [
     price: 1990000,
     type: PRODUCT_TYPE.TRUE_WIRELESS,
     brand: PRODUCT_BRANDS.SONY,
-    image: "../assets/images/products/wfc500.jpg"
+    image: "assets/images/products/wfc500.jpg",
   },
   {
     id: 12,
@@ -107,7 +107,7 @@ const PRODUCTS = [
     price: 3150000,
     type: PRODUCT_TYPE.TRUE_WIRELESS,
     brand: PRODUCT_BRANDS.SONY,
-    image: "../assets/images/products/wf100xm3.jpg"
+    image: "assets/images/products/wf100xm3.jpg",
   },
   {
     id: 13,
@@ -115,7 +115,7 @@ const PRODUCTS = [
     price: 3185000,
     type: PRODUCT_TYPE.TRUE_WIRELESS,
     brand: PRODUCT_BRANDS.APPLE,
-    image: "../assets/images/products/airpod_2.jpg"
+    image: "assets/images/products/airpod_2.jpg",
   },
   {
     id: 14,
@@ -123,7 +123,7 @@ const PRODUCTS = [
     price: 3390000,
     type: PRODUCT_TYPE.IN_EAR,
     brand: PRODUCT_BRANDS.FOCAL,
-    image: "../assets/images/products/focal_sphear_s.jpg"
+    image: "assets/images/products/focal_sphear_s.jpg",
   },
   {
     id: 15,
@@ -131,7 +131,7 @@ const PRODUCTS = [
     price: 4900000,
     type: PRODUCT_TYPE.TRUE_WIRELESS,
     brand: PRODUCT_BRANDS.HIFIMAN,
-    image: "../assets/images/products/hifiman_tws600.jpg"
+    image: "assets/images/products/hifiman_tws600.jpg",
   },
   {
     id: 16,
@@ -139,7 +139,7 @@ const PRODUCTS = [
     price: 4900000,
     type: PRODUCT_TYPE.IN_EAR,
     brand: PRODUCT_BRANDS.HIFIMAN,
-    image: "../assets/images/products/hifiman_re600s.jpg"
+    image: "assets/images/products/hifiman_re600s.jpg",
   },
   {
     id: 17,
@@ -147,7 +147,7 @@ const PRODUCTS = [
     price: 7950000,
     type: PRODUCT_TYPE.FULL_SIZED,
     brand: PRODUCT_BRANDS.HIFIMAN,
-    image: "../assets/images/products/hifiman_deva_pro.jpg"
+    image: "assets/images/products/hifiman_deva_pro.jpg",
   },
   {
     id: 18,
@@ -155,7 +155,7 @@ const PRODUCTS = [
     price: 4350000,
     type: PRODUCT_TYPE.IN_EAR,
     brand: PRODUCT_BRANDS.MOONDROP,
-    image: "../assets/images/products/moondrop_kato.jpg"
+    image: "assets/images/products/moondrop_kato.jpg",
   },
   {
     id: 19,
@@ -163,7 +163,7 @@ const PRODUCTS = [
     price: 3990000,
     type: PRODUCT_TYPE.IN_EAR,
     brand: PRODUCT_BRANDS.MOONDROP,
-    image: "../assets/images/products/moondrop_kxxs.jpg"
+    image: "assets/images/products/moondrop_kxxs.jpg",
   },
   {
     id: 20,
@@ -171,7 +171,7 @@ const PRODUCTS = [
     price: 2890000,
     type: PRODUCT_TYPE.IN_EAR,
     brand: PRODUCT_BRANDS.MOONDROP,
-    image: "../assets/images/products/moondrop_starfield.png"
+    image: "assets/images/products/moondrop_starfield.png",
   },
   {
     id: 21,
@@ -179,7 +179,7 @@ const PRODUCTS = [
     price: 1900000,
     type: PRODUCT_TYPE.IN_EAR,
     brand: PRODUCT_BRANDS.MOONDROP,
-    image: "../assets/images/products/moondrop_aria.jpg"
+    image: "assets/images/products/moondrop_aria.jpg",
   },
   {
     id: 22,
@@ -187,7 +187,7 @@ const PRODUCTS = [
     price: 799000,
     type: PRODUCT_TYPE.IN_EAR,
     brand: PRODUCT_BRANDS.MOONDROP,
-    image: "../assets/images/products/moondrop_ssp.jpg"
+    image: "assets/images/products/moondrop_ssp.jpg",
   },
   {
     id: 23,
@@ -195,7 +195,7 @@ const PRODUCTS = [
     price: 7250000,
     type: PRODUCT_TYPE.IN_EAR,
     brand: PRODUCT_BRANDS.MOONDROP,
-    image: "../assets/images/products/moondrop_blessing2.jpg"
+    image: "assets/images/products/moondrop_blessing2.jpg",
   },
   {
     id: 24,
@@ -203,7 +203,7 @@ const PRODUCTS = [
     price: 22500000,
     type: PRODUCT_TYPE.IN_EAR,
     brand: PRODUCT_BRANDS.MOONDROP,
-    image: "../assets/images/products/moondrop_solis.jpg"
+    image: "assets/images/products/moondrop_solis.jpg",
   },
   {
     id: 25,
@@ -211,7 +211,7 @@ const PRODUCTS = [
     price: 14500000,
     type: PRODUCT_TYPE.IN_EAR,
     brand: PRODUCT_BRANDS.MOONDROP,
-    image: "../assets/images/products/moondrop_s8.jpg"
+    image: "assets/images/products/moondrop_s8.jpg",
   },
   {
     id: 26,
@@ -219,7 +219,7 @@ const PRODUCTS = [
     price: 41990000,
     type: PRODUCT_TYPE.IN_EAR,
     brand: PRODUCT_BRANDS.SONY,
-    image: "../assets/images/products/z1r.jpg"
+    image: "assets/images/products/z1r.jpg",
   },
   {
     id: 27,
@@ -227,7 +227,7 @@ const PRODUCTS = [
     price: 6300000,
     type: PRODUCT_TYPE.EAR_BUD,
     brand: PRODUCT_BRANDS.MOONDROP,
-    image: "../assets/images/products/moondrop_liebesleid_2.jpg"
+    image: "assets/images/products/moondrop_liebesleid_2.jpg",
   },
   {
     id: 28,
@@ -235,7 +235,7 @@ const PRODUCTS = [
     price: 1290000,
     type: PRODUCT_TYPE.EAR_BUD,
     brand: PRODUCT_BRANDS.MOONDROP,
-    image: "../assets/images/products/moondrop_vx.jpg"
+    image: "assets/images/products/moondrop_vx.jpg",
   },
   {
     id: 29,
@@ -243,7 +243,7 @@ const PRODUCTS = [
     price: 6300000,
     type: PRODUCT_TYPE.EAR_BUD,
     brand: PRODUCT_BRANDS.MOONDROP,
-    image: "../assets/images/products/moondrop_liebesleid_2.jpg"
+    image: "assets/images/products/moondrop_liebesleid_2.jpg",
   },
   {
     id: 30,
@@ -251,6 +251,6 @@ const PRODUCTS = [
     price: 150000,
     type: PRODUCT_TYPE.EAR_BUD,
     brand: PRODUCT_BRANDS.SONY,
-    image: "../assets/images/products/mdr_e9lp.jpg"
+    image: "assets/images/products/mdr_e9lp.jpg",
   },
 ];

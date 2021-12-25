@@ -12,6 +12,7 @@ function getQueryParams(key) {
 }
 
 function getPaginatedProducts({ pageIndex, pageSize, sortBy, filterBy }) {
+  console.log(PRODUCTS);
   const startIndex = pageIndex * pageSize;
   const endIndex = startIndex + pageSize;
 

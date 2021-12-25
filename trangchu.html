@@ -11,7 +11,7 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/style.css" />
     <script src="lib/vue.global.prod.js"></script>
   </head>
   <body>
@@ -20,7 +20,7 @@
       <div class="main-container">
         <div class="main-promo">
           <img
-            src="../images/banners/productBanner2.jpg"
+            src="assets/images/banners/productBanner2.jpg"
             style="margin-top: 100px"
           />
           <!-- <img style="visibility: hidden;" src="assets/images/banners/homeBanner2.png" alt="">
@@ -100,34 +100,14 @@
             </div>
             <div class="product-list">
               <div class="item-container">
-                <div class="new-items">
+                <div v-for="product in products" class="new-items">
                   <a href="#">
                     <div class="new-items-img">
-                      <img src="../images/products/ddhifiJanus.jpg" alt="" />
+                      <img :src="product.image" alt="" />
                     </div>
                     <div class="new-items-data">
                       <a class="new-items-data--title" href="">
-                        <p>ddHiFi Janus E2020A</p>
-                      </a>
-                      <div class="newprice">2.490.000 đ</div>
-                      <div class="oldprice">4.990.000 đ</div>
-                    </div>
-                  </a>
-                </div>
-                <div class="new-items"></div>
-                <div class="new-items"></div>
-                <div class="new-items"></div>
-                <div class="new-items"></div>
-                <div class="new-items"></div>
-                <div class="new-items"></div>
-                <div class="new-items">
-                  <a href="">
-                    <div class="new-items-img">
-                      <img src="../images/products/ddhifiJanus.jpg" alt="" />
-                    </div>
-                    <div class="new-items-data">
-                      <a class="new-items-data--title" href="">
-                        <p>ddHiFi Janus E2020A</p>
+                        <p>{{ product.name }}</p>
                       </a>
                       <div class="newprice">2.490.000 đ</div>
                       <div class="oldprice">4.990.000 đ</div>
@@ -135,13 +115,15 @@
                   </a>
                 </div>
               </div>
-              <div class="pagination">
-                <a href="#">«</a>
-                <a href="#">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">»</a>
+              <ul class="pagination">
+                <li :class="{ disabled: !canPreviousPage }" @click="onPreviousPage()">«</li>
+                <li
+                  v-for="page in pages"
+                  @click="onPageChange(page)"
+                  :class="{ active: page === currentPage }"
+                  >{{ page }}</li
+                >
+                <li :class="{ disabled: !canNextPage }" @click="onNextPage()">»</li>
               </div>
             </div>
           </div>
