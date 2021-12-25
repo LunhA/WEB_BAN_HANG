@@ -1,5 +1,4 @@
 const pageSize = 5;
-const maxPage = 5;
 
 const TrangChu = {
   data() {

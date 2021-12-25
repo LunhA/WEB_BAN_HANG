@@ -69,7 +69,7 @@ const cartService = {
 
     if (cartItems) {
       const newCart = cartItems.filter(
-        (itemInCart) => itemInCart.productId !== item.productId
+        (itemInCart) => itemInCart.id !== item.id
       );
       commonStorage.setItem(STORAGE_KEY.CART_ITEMS, newCart);
     }
@@ -96,6 +96,10 @@ const authService = {
     return user;
   },
   register({ username, password }) {
+    if (!username || !password) {
+      return { ok: false };
+    }
+
     let users = commonStorage.getItem(STORAGE_KEY.USERS);
 
     const newUser = { username, password, createdAt: new Date().getTime() };
@@ -107,8 +111,20 @@ const authService = {
     }
 
     commonStorage.setItem(STORAGE_KEY.USERS, users);
+
+    return {
+      ok: true,
+      user: {
+        username: newUser.username,
+        createdAt: newUser.createdAt,
+      },
+    };
   },
   login({ username, password }) {
+    if (!username || !password) {
+      return { ok: false };
+    }
+
     const user = this.getUser(username);
 
     if (!user) {
