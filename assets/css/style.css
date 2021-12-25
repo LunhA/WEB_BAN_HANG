@@ -682,6 +682,9 @@ html {
   width: 40%;
   height: 500px;
   background-color: brown;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* FOOTER */
