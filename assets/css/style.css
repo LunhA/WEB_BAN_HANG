@@ -668,12 +668,12 @@ html {
   border: solid 1px lightgray;
 }
 
-/* .payment-checkbox{
+.payment-checkbox{
   width: 18px;
   height: 18px;
   border: solid 1px light;
   background-color: #E5E5E5;
-} */
+}
 
 
 .payment-content{
@@ -685,8 +685,13 @@ html {
   width: 40%;
   height: 500px;
   background-color: brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.cart-list{
+}
 
 /* FOOTER */
 .footer-container{
