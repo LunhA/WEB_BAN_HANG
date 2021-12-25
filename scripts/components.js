@@ -63,3 +63,13 @@ const AppHeader = {
     </div>
 </div>`,
 };
+
+const AppFooter = {
+    data: function () {
+        return {
+          counts: 0,
+        };
+    },
+    template: `
+    `
+}

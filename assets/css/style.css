@@ -638,10 +638,47 @@ html {
   align-items: center;
 }
 
+.payment-title{
+  color: black;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.line{
+  width: 76%;
+  border-top: solid 1px black;
+}
+
+.customer-info-title{
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.main-payment-info{
+  width: 80%;
+  color: black;
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+
+.customer-info > input{
+  width: 95%;
+  height: 50px;
+  border: solid 1px lightgray;
+}
+
+/* .payment-checkbox{
+  width: 18px;
+  height: 18px;
+  border: solid 1px light;
+  background-color: #E5E5E5;
+} */
+
+
 .payment-content{
   width: 60%;
   height: 500px;
-  background-color: aquamarine;
 }
 
 .cart-content{
