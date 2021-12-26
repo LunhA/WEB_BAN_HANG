@@ -350,6 +350,7 @@ html {
 .new-items {
   width: 210px;
   height: 355px;
+  margin: 0 1.476%;
   margin-bottom: 50px;
   transition: 0.5s;
 }
@@ -846,7 +847,20 @@ html {
 }
 
 
+/* XEM LAI HOA DON */
 
+.bill-review{
+  width: 70%;
+  display: flex;
+  margin-top: 150px;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.bill-body{
+  width: 100%;
+
+}
 
 /* FOOTER */
 .footer-container {
