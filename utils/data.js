@@ -19,6 +19,7 @@ const PRODUCTS = [
     price: 3990000,
     type: PRODUCT_TYPE.FULL_SIZED,
     brand: PRODUCT_BRANDS.HIFIMAN,
+    date: 12/12/2020, 
     image: "assets/images/products/hifiman_he400se.jpg",
   },
   {
