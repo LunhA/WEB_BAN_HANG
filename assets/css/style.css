@@ -303,6 +303,11 @@ html {
   transition: 0.8s;
 }
 
+.main-tag-active {
+  color: white;
+  background-color: black;
+}
+
 .main-tag:hover {
   color: white;
   background-color: black;
@@ -682,12 +687,12 @@ html {
 .cart-content {
   width: 40%;
   display: flex;
-  flex-wrap: wrap ;
+  flex-wrap: wrap;
   /* align-items: center; */
   justify-content: center;
 }
 
-.total{
+.total {
   width: 100%;
   height: 50px;
   font-size: 24px;
@@ -701,7 +706,7 @@ html {
   border-top: solid 1px black;
 }
 
-.complete-payment{
+.complete-payment {
   height: 50px;
   width: 80%;
   background-color: white;
@@ -715,35 +720,35 @@ html {
   border-radius: 25px;
 }
 
-.complete-payment:hover{
+.complete-payment:hover {
   background-color: black;
   color: white;
 }
 
-.cart-list{
+.cart-list {
   width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.cart-list > ul > li{
+.cart-list > ul > li {
   list-style: decimal;
 }
 
-.cart-list-item{
+.cart-list-item {
   width: 100%;
   height: 100px;
   display: flex;
   align-items: center;
   /* justify-content: center; */
-} 
+}
 
-.delete-item{
+.delete-item {
   padding-left: 15px;
 }
 
-.delete-item > img{
+.delete-item > img {
   width: 25px;
   height: 25px;
 }
@@ -754,9 +759,8 @@ html {
   border-radius: 10px;
 }
 
-
 /* CHI TIET SAN PHAM */
-.item-detail{
+.item-detail {
   width: 70%;
   display: flex;
   margin-top: 150px;
@@ -764,7 +768,7 @@ html {
   justify-content: center;
 }
 
-.item-detail-img{
+.item-detail-img {
   width: 40%;
   height: 440px;
   display: flex;
@@ -772,60 +776,60 @@ html {
   justify-content: center;
 }
 
-.item-detail-img > img{
+.item-detail-img > img {
   width: 90%;
   height: 90%;
   object-fit: contain;
 }
 
-.item-detail-info{
+.item-detail-info {
   width: 60%;
   padding-left: 10px;
 }
 
-.title{
+.title {
   font-size: 34px;
   font-weight: 700;
   color: black;
 }
 
-.brand-name > a{
-  color:royalblue;
+.brand-name > a {
+  color: royalblue;
   text-decoration: none;
   font-weight: 700;
 }
 
-.item-price{
+.item-price {
   color: black;
   font-size: 40px;
   font-weight: 700;
 }
 
-.guarantee{
+.guarantee {
   height: 40px;
   display: flex;
   align-items: center;
 }
 
-.guarantee-img{
+.guarantee-img {
   width: 18px;
   height: 20px;
   margin-bottom: 1%;
   margin-right: 2px;
 }
 
-.guarantee-img > img{
+.guarantee-img > img {
   width: 100%;
   height: 100%;
 }
 
-.guarantee-time{
+.guarantee-time {
   height: 18px;
   display: flex;
-  align-items: center ;
+  align-items: center;
 }
 
-.buy-btn{
+.buy-btn {
   height: 50px;
   width: 250px;
   border: solid 1px black;
@@ -837,21 +841,20 @@ html {
   font-weight: 700;
 }
 
-.buy-btn:hover{
+.buy-btn:hover {
   color: white;
   background-color: black;
 }
 
-.more-detail{
+.more-detail {
   width: 80%;
   color: black;
   font-size: 16px;
 }
 
-
 /* XEM LAI HOA DON */
 
-.bill-review{
+.bill-review {
   width: 70%;
   display: flex;
   margin-top: 150px;
@@ -859,9 +862,8 @@ html {
   justify-content: center;
 }
 
-.bill-body{
+.bill-body {
   width: 100%;
-
 }
 
 /* FOOTER */

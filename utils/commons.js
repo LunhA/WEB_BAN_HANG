@@ -60,12 +60,12 @@ function getPaginatedProducts({
   }
 
   // Paginating
-  data = data.slice(startIndex, endIndex);
+  const paginatedData = data.slice(startIndex, endIndex);
 
   return {
     pageIndex,
-    total: PRODUCTS.length,
-    data: data,
+    total: data.length,
+    data: paginatedData,
   };
 }
 

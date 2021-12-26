@@ -1,45 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="lib/vue.global.prod.js"></script>
-  </head>
-  <body>
-    <div id="app">
-      <app-header></app-header>
-      <div class="main-container">
-        <div class="main-promo">
-          <img
-            src="assets/images/banners/productBanner2.jpg"
-            style="margin-top: 100px"
-          />
-        </div>
-        <div class="main-content">
-          <div class="main-tag" id="main-tag">FULL SIZED</div>
-          <div class="main-tag">INEAR</div>
-          <div class="main-tag">EARBUD</div>
-          <div class="main-tag">TRUE WIRELESS</div>
-        </div>
-        <div class="main-content">
-          <div class="new-product">
-            <div class="search-bar">
-              <input
-                id="search-input"
-                type="search"
-                name="s"
-                placeholder="Gõ để tìm kiếm"
-                maxlength="40"
-                style="
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="lib/vue.global.prod.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <app-header></app-header>
+    <div class="main-container">
+      <div class="main-promo">
+        <img src="assets/images/banners/productBanner2.jpg" style="margin-top: 100px" />
+      </div>
+      <div class="main-content">
+        <div class="main-tag" :class="{ 'main-tag-active': selectedType === productType.FULL_SIZED }"
+          @click="onTypeChange(productType.FULL_SIZED)">FULL SIZED</div>
+        <div class="main-tag" :class="{ 'main-tag-active': selectedType === productType.IN_EAR }"
+          @click="onTypeChange(productType.IN_EAR)">IN EAR</div>
+        <div class="main-tag" :class="{ 'main-tag-active': selectedType === productType.EAR_BUD }"
+          @click="onTypeChange(productType.EAR_BUD)">EARBUD</div>
+        <div class="main-tag" :class="{ 'main-tag-active': selectedType === productType.TRUE_WIRELESS }"
+          @click="onTypeChange(productType.TRUE_WIRELESS)">TRUE WIRELESS</div>
+      </div>
+      <div class="main-content">
+        <div class="new-product">
+          <div class="search-bar">
+            <input id="search-input" type="search" name="s" placeholder="Gõ để tìm kiếm" maxlength="40" style="
                   border: 1px solid rgb(116, 116, 116);
                   border-radius: 38px;
                   border-image: initial;
@@ -47,89 +40,82 @@
                   width: 500px;
                   height: 60px;
                   padding: 30px;
-                "
-              />
-              <div class="search-icon">
-                <img
-                  class="search-icon-img"
-                  src="assets/images/icons/search-icon.png"
-                />
-              </div>
+                " />
+            <div class="search-icon">
+              <img class="search-icon-img" src="assets/images/icons/search-icon.png" />
             </div>
+          </div>
 
-            <div class="sort-container">
-              <div class="sort-option">SẮP XẾP THEO:</div>
-              <form class="sort-form" action="/action_page.php">
-                <select name="product-status" id="product-status">
-                  <option value="newest">Mới nhất</option>
-                  <option value="oldest">Cũ Nhất</option>
-                  <option value="lowToHigh">Từ thấp tới cao</option>
-                  <option value="highToLow">Từ cao tới thấp</option>
-                </select>
-              </form>
+          <div class="sort-container">
+            <div class="sort-option">SẮP XẾP THEO:</div>
+            <div class="sort-form">
+              <select name="product-status" id="product-status" @change="onSortChange($event)">
+                <option :value="productSort.NEWEST">Mới nhất</option>
+                <option :value="productSort.OLDEST">Cũ Nhất</option>
+                <option :value="productSort.PRICE_HIGH">Từ thấp tới cao</option>
+                <option :value="productSort.PRICE_LOW">Từ cao tới thấp</option>
+              </select>
             </div>
           </div>
         </div>
-        <div class="main-content">
-          <div class="new-product">
-            <div class="left-menu">
-              <div class="brand-filter">
-                <div class="brand-filter-title">THƯƠNG HIỆU</div>
-                <div class="brand-container">
-                  <label class="container">
-                    <input type="checkbox" checked="checked" value="One" />
-                    <span class="checkmark"></span> One
-                  </label>
-                  <label class="container">
-                    <input type="checkbox" checked="checked" value="One" />
-                    <span class="checkmark"></span> One
-                  </label>
-                </div>
-              </div>
-              <div class="brand-filter price-filter">
-                <div class="brand-filter-title">KHOẢNG GIÁ</div>
-                <div class="price-container">
-                  Chọn khoảng giá mong muốn.
-                  <input type="number" name="" id="price-input" />
-                  <span>-</span>
-                  <input type="number" name="" id="price-input" />
-                </div>
-              </div>
-            </div>
-            <div class="product-list">
-              <div class="item-container">
-                <div v-for="product in products" class="new-items">
-                  <a href="#">
-                    <div class="new-items-img">
-                      <img :src="product.image" alt="" />
-                    </div>
-                    <div class="new-items-data">
-                      <a class="new-items-data--title" href="">
-                        <p>{{ product.name }}</p>
-                      </a>
-                      <div class="newprice">{{ formatPrice(product.price) }} đ</div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <ul class="pagination">
-                <li :class="{ disabled: !canPreviousPage }" @click="onPreviousPage()">«</li>
-                <li
-                  v-for="page in pages"
-                  @click="onPageChange(page)"
-                  :class="{ active: page === currentPage }"
-                  >{{ page }}</li
-                >
-                <li :class="{ disabled: !canNextPage }" @click="onNextPage()">»</li>
-              </div>
-            </div>
-          </div>
-        </div>
-      <app-footer></app-footer>
       </div>
-  </body>
-  <script src="utils/data.js"></script>
-  <script src="utils/commons.js"></script>
-  <script src="scripts/components.js"></script>
-  <script src="scripts/trangchu.js"></script>
+      <div class="main-content">
+        <div class="new-product">
+          <div class="left-menu">
+            <div class="brand-filter">
+              <div class="brand-filter-title">THƯƠNG HIỆU</div>
+              <div class="brand-container">
+                <label class="container">
+                  <input type="checkbox" checked="checked" value="One" />
+                  <span class="checkmark"></span> One
+                </label>
+                <label class="container">
+                  <input type="checkbox" checked="checked" value="One" />
+                  <span class="checkmark"></span> One
+                </label>
+              </div>
+            </div>
+            <div class="brand-filter price-filter">
+              <div class="brand-filter-title">KHOẢNG GIÁ</div>
+              <div class="price-container">
+                Chọn khoảng giá mong muốn.
+                <input type="number" name="" id="price-input" />
+                <span>-</span>
+                <input type="number" name="" id="price-input" />
+              </div>
+            </div>
+          </div>
+          <div class="product-list">
+            <div class="item-container">
+              <div v-for="product in products" class="new-items">
+                <a href="#">
+                  <div class="new-items-img">
+                    <img :src="product.image" alt="" />
+                  </div>
+                  <div class="new-items-data">
+                    <a class="new-items-data--title" href="">
+                      <p>{{ product.name }}</p>
+                    </a>
+                    <div class="newprice">{{ formatPrice(product.price) }} đ</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <ul class="pagination">
+              <li :class="{ disabled: !canPreviousPage }" @click="onPreviousPage()">«</li>
+              <li v-for="page in pages" @click="onPageChange(page)" :class="{ active: page === currentPage }">{{ page }}
+              </li>
+              <li :class="{ disabled: !canNextPage }" @click="onNextPage()">»</li>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</body>
+<script src="utils/data.js"></script>
+<script src="utils/commons.js"></script>
+<script src="scripts/components.js"></script>
+<script src="scripts/trangchu.js"></script>
+
 </html>

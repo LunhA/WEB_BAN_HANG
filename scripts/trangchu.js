@@ -6,12 +6,20 @@ const TrangChu = {
       products: [],
       currentPage: 1,
       total: 0,
+      sortBy: SORT_BY.NEWEST,
+      selectedType: "",
     };
   },
   mounted() {
     this.fetchData();
   },
   computed: {
+    productType() {
+      return PRODUCT_TYPE;
+    },
+    productSort() {
+      return SORT_BY;
+    },
     pageCount() {
       return Math.ceil(this.total / pageSize);
     },
@@ -35,10 +43,29 @@ const TrangChu = {
       const { total, data } = getPaginatedProducts({
         pageIndex: this.currentPage - 1,
         pageSize: pageSize,
+        filterBy: {
+          type: this.selectedType,
+        },
+        sortBy: this.sortBy,
       });
 
       this.total = total;
       this.products = data;
+    },
+    onSortChange(e) {
+      const value = e.target.value;
+      this.sortBy = value;
+      this.fetchData();
+    },
+    onTypeChange(type) {
+      if (this.selectedType === type) {
+        this.selectedType = "";
+      } else {
+        this.selectedType = type;
+      }
+
+      this.currentPage = 1;
+      this.fetchData();
     },
     onNextPage() {
       if (this.canNextPage) {
@@ -57,8 +84,8 @@ const TrangChu = {
       this.fetchData();
     },
     formatPrice(value) {
-          let val = (value/1).toFixed(0).replace('.', ',')
-          return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+      let val = (value / 1).toFixed(0).replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
   },
 };
