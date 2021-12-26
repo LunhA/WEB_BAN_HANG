@@ -4,6 +4,13 @@ const STORAGE_KEY = {
   USERS: "users",
 };
 
+const SORT_BY = {
+  NEWEST: "newest",
+  OLDEST: "oldest",
+  PRICE_HIGH: "price_high",
+  PRICE_LOW: "price_low",
+};
+
 function getQueryParams(key) {
   let uri = window.location.search.substring(1);
   let params = new URLSearchParams(uri);
@@ -11,12 +18,49 @@ function getQueryParams(key) {
   return params.get(key);
 }
 
-function getPaginatedProducts({ pageIndex, pageSize, sortBy, filterBy }) {
-  console.log(PRODUCTS);
+function getPaginatedProducts({
+  pageIndex,
+  pageSize,
+  sortBy,
+  filterBy = {
+    brand: "",
+    type: "",
+  },
+  searchKey = "",
+}) {
   const startIndex = pageIndex * pageSize;
   const endIndex = startIndex + pageSize;
 
-  const data = PRODUCTS.slice(startIndex, endIndex);
+  let data = PRODUCTS;
+
+  // Filter data by criteria
+  if (filterBy.brand) {
+    data = data.filter((product) => product.brand === filterBy.brand);
+  }
+
+  if (filterBy.type) {
+    data = data.filter((product) => product.type === filterBy.type);
+  }
+
+  // Filter data by search key
+  data = data.filter((product) =>
+    product.name.toLowerCase().includes(searchKey.toLowerCase())
+  );
+
+  // Sort data
+  switch (sortBy) {
+    case SORT_BY.NEWEST:
+      break;
+    case SORT_BY.OLDEST:
+      break;
+    case SORT_BY.PRICE_HIGH:
+      break;
+    case SORT_BY.PRICE_LOW:
+      break;
+  }
+
+  // Paginating
+  data = data.slice(startIndex, endIndex);
 
   return {
     pageIndex,
