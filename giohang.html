@@ -21,45 +21,68 @@
 
       <div class="main-container">
         <div class="cart-container">
-            <div class="payment-content">
-                <span class="payment-title">Giỏ Hàng</span><br>
-                <div class="line"></div><br>
-                <span class="customer-info-title">Thông tin khách hàng</span>
-                <div class="main-payment-info">
-                    <form action="" id="customer-info">
-                        <label for="">Họ tên *</label><br>
-                        <input type="text" class="user-input" id="" required><br>
-                        <label for="">Địa chỉ *</label><br>
-                        <input type="text" class="user-input" id="" required><br>
-                        <label for="">Số điện thoại *</label><br>
-                        <input type="text" class="user-input" name="" id="" required><br>
-                        <label for="">Ghi chú</label><br>
-                        <input type="text" class="user-input" id=""><br>
-                    </form>
-                </div>
-                <div class="main-payment-method main-payment-info">
-                    <span class="customer-info-title">Phuong thuc thanh toan</span>
-                    <form action="" id="payment-method">
-                        <input type="radio" class="payment-checkbox" name="payment" id="">COD  <img style="height: 30px;" src="assets/images/icons/COD.png" alt=""> <br>
-                    </form>
-                </div>
+          <div class="payment-content">
+            <span class="payment-title">Giỏ Hàng</span><br />
+            <div class="line"></div>
+            <br />
+            <span class="customer-info-title">Thông tin khách hàng</span>
+            <div class="main-payment-info">
+              <form action="" id="customer-info">
+                <label for="">Họ tên *</label><br />
+                <input type="text" class="user-input" id="" required /><br />
+                <label for="">Địa chỉ *</label><br />
+                <input type="text" class="user-input" id="" required /><br />
+                <label for="">Số điện thoại *</label><br />
+                <input
+                  type="text"
+                  class="user-input"
+                  name=""
+                  id=""
+                  required
+                /><br />
+                <label for="">Ghi chú</label><br />
+                <input type="text" class="user-input" id="" /><br />
+              </form>
             </div>
-            <div class="cart-content">
-                <div class="total">TỔNG TIỀN: </div>
-                <div class="complete-payment">THANH TOÁN</div>
-                <div class="line2"></div> <br>
-                <div class="cart-list">
-                    <ul>
-                        <li> <div class="cart-list-item"> <img src="assets/images/products/moondrop_kxxs.jpg"> Moondrop KXXS 3390000 <div class="delete-item"><img src="assets/images/icons/bin.png" alt=""></div> </div></li>
-                        <li> <div class="cart-list-item"> <img src="assets/images/products/moondrop_kxxs.jpg"> Moondrop KXXS 3390000 <div class="delete-item"><img src="assets/images/icons/bin.png" alt=""></div> </div></li>
-                        <li> <div class="cart-list-item"> <img src="assets/images/products/moondrop_kxxs.jpg"> Moondrop KXXS 3390000 <div class="delete-item"><img src="assets/images/icons/bin.png" alt=""></div> </div></li>
-                        <li> <div class="cart-list-item"> <img src="assets/images/products/moondrop_kxxs.jpg"> Moondrop KXXS 3390000 <div class="delete-item"><img src="assets/images/icons/bin.png" alt=""></div> </div></li>
-                    
-                    </ul>
-                </div>
+            <div class="main-payment-method main-payment-info">
+              <span class="customer-info-title">Phuong thuc thanh toan</span>
+              <form action="" id="payment-method">
+                <input
+                  type="radio"
+                  class="payment-checkbox"
+                  name="payment"
+                  id=""
+                />COD
+                <img
+                  style="height: 30px"
+                  src="assets/images/icons/COD.png"
+                  alt=""
+                />
+                <br />
+              </form>
             </div>
+          </div>
+          <div class="cart-content">
+            <div class="total">TỔNG TIỀN: {{ totalPrice }}</div>
+            <div class="complete-payment">THANH TOÁN</div>
+            <div class="line2"></div>
+            <br />
+            <div class="cart-list">
+              <ul>
+                <li v-for="item in cartItems">
+                  <div class="cart-list-item">
+                    <img :src="item.image" />
+                    {{ item.name }} | {{ formatPrice(item.price)}}
+                    <div class="delete-item" @click="onRemoveItem(item)">
+                      <img src="assets/images/icons/bin.png" alt="" />
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
 
       <app-footer></app-footer>
       <script

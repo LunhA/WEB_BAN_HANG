@@ -3,9 +3,18 @@ const DangNhap = {
     return {
       username: "",
       password: "",
+      user: {},
     };
   },
-  mounted() {},
+  mounted() {
+    this.user = authService.getSession();
+    console.log(this.user);
+  },
+  computed: {
+    isLoggedIn() {
+      return !!authService.getSession();
+    },
+  },
   methods: {
     onLogin() {
       if (!this.username || !this.password) {
@@ -26,6 +35,9 @@ const DangNhap = {
           "Đăng nhập thất bại, vui lòng kiểm tra lại tài khoản hoặc mật khẩu"
         );
       }
+    },
+    onLogout() {
+      authService.logout();
     },
     onRegister() {
       if (!this.username || !this.password) {

@@ -40,7 +40,7 @@
                   width: 500px;
                   height: 60px;
                   padding: 30px;
-                " />
+                " v-model="searchKey"/>
             <div class="search-icon">
               <img class="search-icon-img" src="assets/images/icons/search-icon.png" />
             </div>
@@ -88,7 +88,7 @@
           <div class="product-list">
             <div class="item-container">
               <div v-for="product in products" class="new-items">
-                <a href="#">
+                <div @click="onProductClick(product)">
                   <div class="new-items-img">
                     <img :src="product.image" alt="" />
                   </div>
@@ -98,7 +98,7 @@
                     </a>
                     <div class="newprice">{{ formatPrice(product.price) }} đ</div>
                   </div>
-                </a>
+                </div>
               </div>
             </div>
             <ul class="pagination">

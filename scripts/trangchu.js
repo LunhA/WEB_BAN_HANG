@@ -8,6 +8,7 @@ const TrangChu = {
       total: 0,
       sortBy: SORT_BY.NEWEST,
       selectedType: "",
+      searchKey: "",
     };
   },
   mounted() {
@@ -38,6 +39,11 @@ const TrangChu = {
       return this.currentPage > 1;
     },
   },
+  watch: {
+    searchKey() {
+      this.onSearchKeyChange();
+    },
+  },
   methods: {
     fetchData() {
       const { total, data } = getPaginatedProducts({
@@ -47,14 +53,20 @@ const TrangChu = {
           type: this.selectedType,
         },
         sortBy: this.sortBy,
+        searchKey: this.searchKey,
       });
 
       this.total = total;
       this.products = data;
     },
+    onSearchKeyChange() {
+      this.currentPage = 1;
+      this.fetchData();
+    },
     onSortChange(e) {
       const value = e.target.value;
       this.sortBy = value;
+      this.currentPage = 1;
       this.fetchData();
     },
     onTypeChange(type) {
@@ -66,6 +78,9 @@ const TrangChu = {
 
       this.currentPage = 1;
       this.fetchData();
+    },
+    onProductClick(product) {
+      window.location.href = `chitietsanpham.html?productId=${product.id}`;
     },
     onNextPage() {
       if (this.canNextPage) {

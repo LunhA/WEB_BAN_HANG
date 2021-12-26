@@ -21,30 +21,48 @@
 
       <div class="main-container">
         <div class="item-detail">
-            <div class="item-detail-img"><img src="assets/images/products/wh1000xm4.jpg" alt=""></div>
-            <div class="item-detail-info">
-                <h2 class="title">Sony WH-1000XM4</h2>
-                <h6 class="brand-name">THƯƠNG HIỆU <a href="#">SONY</a></h6>
-                <span class="item-price">6.390.000 đ</span>
-                <div class="guarantee">
-                    <div class="guarantee-img"><img src="assets/images/icons/icon-shield.svg" alt=""></div>
-                    <div class="guarantee-time">Bảo hành 12 tháng.</div>
-                </div>
-                <div class="buy-btn">THÊM VÀO GIỎ HÀNG</div> <br>
-                <div class="more-detail">
-                    <ul>
-                        <li>Màu sắc đang có sẵn (cập nhật ngày 01/12/2021): Black, Silver, Midnight Blue.</li>
-                        <li>Sony WH-1000XM4 tiếp tục giữ vững ngôi vị tai nghe chống ồn tốt nhất trên thị trường hiện nay</li>
-                        <li>Bluetooth 5.0 cùng khả năng kết nối 2 thiết bị</li>
-                        <li>Thời lượng pin 30h, sạc nhanh 5 phút</li>
-                        <li>Chế độ speak to chat thông minh duy nhất chỉ có trên WH-1000XM4</li>
-                        <li>Sony WH-1000XM4 là tai nghe đầu tiên của Sony được trang bị DSEE EXTREME</li>
-                    </ul>
-                </div>
+          <div class="item-detail-img">
+            <img :src="product.image" alt="" />
+          </div>
+          <div class="item-detail-info">
+            <h2 class="title">{{ product.name }}</h2>
+            <h6 class="brand-name">
+              THƯƠNG HIỆU <a href="#">{{ product.brand }}</a>
+            </h6>
+            <span class="item-price">{{ formatPrice(product.price) }}</span>
+            <div class="guarantee">
+              <div class="guarantee-img">
+                <img src="assets/images/icons/icon-shield.svg" alt="" />
+              </div>
+              <div class="guarantee-time">Bảo hành 12 tháng.</div>
             </div>
+            <div class="buy-btn" @click="onAddToCart()">THÊM VÀO GIỎ HÀNG</div>
+            <br />
+            <div class="more-detail">
+              <ul>
+                <li>
+                  Màu sắc đang có sẵn (cập nhật ngày 01/12/2021): Black, Silver,
+                  Midnight Blue.
+                </li>
+                <li>
+                  Sony WH-1000XM4 tiếp tục giữ vững ngôi vị tai nghe chống ồn
+                  tốt nhất trên thị trường hiện nay
+                </li>
+                <li>Bluetooth 5.0 cùng khả năng kết nối 2 thiết bị</li>
+                <li>Thời lượng pin 30h, sạc nhanh 5 phút</li>
+                <li>
+                  Chế độ speak to chat thông minh duy nhất chỉ có trên
+                  WH-1000XM4
+                </li>
+                <li>
+                  Sony WH-1000XM4 là tai nghe đầu tiên của Sony được trang bị
+                  DSEE EXTREME
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
-
+      </div>
       <app-footer></app-footer>
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -53,10 +71,10 @@
       ></script>
     </div>
     <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"
-      ></script>
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
   </body>
   <script src="utils/data.js"></script>
   <script src="utils/commons.js"></script>

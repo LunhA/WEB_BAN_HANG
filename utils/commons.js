@@ -18,6 +18,10 @@ function getQueryParams(key) {
   return params.get(key);
 }
 
+function getProductById(productId) {
+  return PRODUCTS.find((product) => product.id === +productId);
+}
+
 function getPaginatedProducts({
   pageIndex,
   pageSize,
@@ -50,12 +54,16 @@ function getPaginatedProducts({
   // Sort data
   switch (sortBy) {
     case SORT_BY.NEWEST:
+      data = [...data].sort((a, b) => a.id - b.id);
       break;
     case SORT_BY.OLDEST:
+      data = [...data].sort((a, b) => b.id - a.id);
       break;
     case SORT_BY.PRICE_HIGH:
+      data = [...data].sort((a, b) => a.price - b.price);
       break;
     case SORT_BY.PRICE_LOW:
+      data = [...data].sort((a, b) => b.price - a.price);
       break;
   }
 
@@ -102,7 +110,7 @@ const cartService = {
     const cartItems = commonStorage.getItem(STORAGE_KEY.CART_ITEMS);
 
     if (cartItems) {
-      cartItems.push(item);
+      cartItems.push({ ...item, cartItemId: new Date().getTime() });
       commonStorage.setItem(STORAGE_KEY.CART_ITEMS, cartItems);
     } else {
       const newCart = [item];
@@ -114,7 +122,7 @@ const cartService = {
 
     if (cartItems) {
       const newCart = cartItems.filter(
-        (itemInCart) => itemInCart.id !== item.id
+        (itemInCart) => itemInCart.cartItemId !== item.cartItemId
       );
       commonStorage.setItem(STORAGE_KEY.CART_ITEMS, newCart);
     }

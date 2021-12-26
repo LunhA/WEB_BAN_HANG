@@ -19,8 +19,16 @@ const PRODUCTS = [
     price: 3990000,
     type: PRODUCT_TYPE.FULL_SIZED,
     brand: PRODUCT_BRANDS.HIFIMAN,
-    date: 12/12/2020, 
+    date: 211224,
     image: "assets/images/products/hifiman_he400se.jpg",
+    descriptions: [
+      "Màu sắc đang có sẵn (cập nhật ngày 01/12/2021): Black, Silver, Midnight Blue.",
+      "Sony WH-1000XM4 tiếp tục giữ vững ngôi vị tai nghe chống ồn tốt nhất trên thị trường hiện nay",
+      "Bluetooth 5.0 cùng khả năng kết nối 2 thiết bị",
+      "Thời lượng pin 30h, sạc nhanh 5 phút",
+      "Chế độ speak to chat thông minh duy nhất chỉ có trên WH-1000XM4",
+      "Sony WH-1000XM4 là tai nghe đầu tiên của Sony được trang bị DSEE EXTREME",
+    ],
   },
   {
     id: 2,

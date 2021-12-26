@@ -1,11 +1,26 @@
 const ChiTietSanPham = {
   data() {
     return {
-      counter: 1,
+      product: null,
     };
   },
   mounted() {
-    console.log(getQueryParams("productId"));
+    const productId = getQueryParams("productId");
+    const product = getProductById(productId);
+
+    this.product = product;
+  },
+  methods: {
+    formatPrice(value) {
+      let val = (value / 1).toFixed(0).replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    },
+    onAddToCart() {
+      if (this.product) {
+        cartService.addCartItem(this.product);
+        alert("Đã thêm sản phẩm vào giỏ hàng thành công");
+      }
+    },
   },
 };
 
