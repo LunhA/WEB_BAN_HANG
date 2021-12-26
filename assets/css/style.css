@@ -365,6 +365,7 @@ html {
 
 .new-items-img > img {
   width: 100%;
+  height: 100%;
 }
 
 .new-items-data {
@@ -648,6 +649,7 @@ html {
 
 .line {
   width: 76%;
+  height: 2px;
   border-top: solid 1px black;
 }
 
@@ -670,13 +672,6 @@ html {
   border: solid 1px lightgray;
 }
 
-/* .payment-checkbox{
-  width: 18px;
-  height: 18px;
-  border: solid 1px light;
-  background-color: #E5E5E5;
-} */
-
 .payment-content {
   width: 60%;
   height: 500px;
@@ -684,12 +679,174 @@ html {
 
 .cart-content {
   width: 40%;
-  height: 500px;
-  background-color: brown;
+  display: flex;
+  flex-wrap: wrap ;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.total{
+  width: 100%;
+  height: 50px;
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+}
+
+.line2 {
+  width: 90%;
+  margin: 10px 0;
+  border-top: solid 1px black;
+}
+
+.complete-payment{
+  height: 50px;
+  width: 80%;
+  background-color: white;
+  border: solid 1px black;
+  color: black;
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.complete-payment:hover{
+  background-color: black;
+  color: white;
+}
+
+.cart-list{
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.cart-list > ul > li{
+  list-style: decimal;
+}
+
+.cart-list-item{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+} 
+
+.delete-item{
+  padding-left: 15px;
+}
+
+.delete-item > img{
+  width: 25px;
+  height: 25px;
+}
+
+.cart-list-item > img {
+  margin-left: 10px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+
+/* CHI TIET SAN PHAM */
+.item-detail{
+  width: 70%;
+  display: flex;
+  margin-top: 150px;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.item-detail-img{
+  width: 40%;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-detail-img > img{
+  width: 90%;
+  height: 90%;
+}
+
+.item-detail-info{
+  width: 60%;
+  padding-left: 10px;
+}
+
+.title{
+  font-size: 34px;
+  font-weight: 700;
+  color: black;
+}
+
+.brand-name > a{
+  color:royalblue;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.item-price{
+  color: black;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.guarantee{
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.guarantee-img{
+  width: 18px;
+  height: 20px;
+  margin-bottom: 1%;
+  margin-right: 2px;
+}
+
+.guarantee-img > img{
+  width: 100%;
+  height: 100%;
+}
+
+.guarantee-time{
+  height: 18px;
+  display: flex;
+  align-items: center ;
+}
+
+.buy-btn{
+  height: 50px;
+  width: 250px;
+  border: solid 1px black;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  font-weight: 700;
+}
+
+.buy-btn:hover{
+  color: white;
+  background-color: black;
+}
+
+.more-detail{
+  width: 80%;
+  color: black;
+  font-size: 16px;
+}
+
+
+
 
 /* FOOTER */
 .footer-container {

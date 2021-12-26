@@ -1,4 +1,4 @@
-const pageSize = 5;
+const pageSize = 8;
 
 const TrangChu = {
   data() {
@@ -61,4 +61,5 @@ const TrangChu = {
 
 const app = Vue.createApp(TrangChu);
 app.component("app-header", AppHeader);
+app.component("app-footer", AppFooter);
 app.mount("#app");

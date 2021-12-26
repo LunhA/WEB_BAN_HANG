@@ -9,4 +9,7 @@ const ChiTietSanPham = {
   },
 };
 
-Vue.createApp(ChiTietSanPham).mount("#app");
+const app = Vue.createApp(ChiTietSanPham);
+app.component("app-header", AppHeader);
+app.component("app-footer", AppFooter);
+app.mount("#app");

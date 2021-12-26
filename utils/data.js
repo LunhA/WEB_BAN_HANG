@@ -19,7 +19,7 @@ const PRODUCTS = [
     price: 3990000,
     type: PRODUCT_TYPE.FULL_SIZED,
     brand: PRODUCT_BRANDS.HIFIMAN,
-    image: ".assets/images/products/hifiman_he400se.jpg",
+    image: "assets/images/products/hifiman_he400se.jpg",
   },
   {
     id: 2,
@@ -107,7 +107,7 @@ const PRODUCTS = [
     price: 3150000,
     type: PRODUCT_TYPE.TRUE_WIRELESS,
     brand: PRODUCT_BRANDS.SONY,
-    image: "assets/images/products/wf100xm3.jpg",
+    image: "assets/images/products/wf1000xm3.jpg",
   },
   {
     id: 13,

@@ -24,4 +24,8 @@ const GioHang = {
   },
 };
 
-Vue.createApp(GioHang).mount("#app");
+
+const app = Vue.createApp(GioHang);
+app.component("app-header", AppHeader);
+app.component("app-footer", AppFooter);
+app.mount("#app");

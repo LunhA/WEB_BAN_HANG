@@ -23,8 +23,6 @@
             src="assets/images/banners/productBanner2.jpg"
             style="margin-top: 100px"
           />
-          <!-- <img style="visibility: hidden;" src="assets/images/banners/homeBanner2.png" alt="">
-            <img style="visibility: hidden;" src="assets/images/banners/homeBanner3.png" alt=""> -->
         </div>
         <div class="main-content">
           <div class="main-tag" id="main-tag">FULL SIZED</div>
@@ -109,8 +107,7 @@
                       <a class="new-items-data--title" href="">
                         <p>{{ product.name }}</p>
                       </a>
-                      <div class="newprice">2.490.000 đ</div>
-                      <div class="oldprice">4.990.000 đ</div>
+                      <div class="newprice">{{ product.price }} đ</div>
                     </div>
                   </a>
                 </div>
@@ -128,8 +125,8 @@
             </div>
           </div>
         </div>
+      <app-footer></app-footer>
       </div>
-    </div>
   </body>
   <script src="utils/data.js"></script>
   <script src="utils/commons.js"></script>

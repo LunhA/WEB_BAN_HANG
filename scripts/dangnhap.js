@@ -53,4 +53,5 @@ const DangNhap = {
 
 const app = Vue.createApp(DangNhap);
 app.component("app-header", AppHeader);
+app.component("app-footer", AppFooter);
 app.mount("#app");
