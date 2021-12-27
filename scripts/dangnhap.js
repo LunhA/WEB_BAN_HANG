@@ -38,6 +38,7 @@ const DangNhap = {
     },
     onLogout() {
       authService.logout();
+      window.location.href = "trangchu.html";
     },
     onRegister() {
       if (!this.username || !this.password) {

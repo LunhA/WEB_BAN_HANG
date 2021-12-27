@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Ikus Audio</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -66,12 +66,24 @@
               <div class="brand-filter-title">THƯƠNG HIỆU</div>
               <div class="brand-container">
                 <label class="container">
-                  <input type="checkbox" checked="checked" value="One" />
-                  <span class="checkmark"></span> One
+                  <input type="checkbox"  value="One" />
+                  <span class="checkmark"></span> Apple
                 </label>
                 <label class="container">
-                  <input type="checkbox" checked="checked" value="One" />
-                  <span class="checkmark"></span> One
+                  <input type="checkbox"  value="One" />
+                  <span class="checkmark"></span> Focal
+                </label>
+                <label class="container">
+                  <input type="checkbox"  value="One" />
+                  <span class="checkmark"></span> HiFiMan
+                </label>
+                <label class="container">
+                  <input type="checkbox"  value="One" />
+                  <span class="checkmark"></span> MOONDROP
+                </label>
+                <label class="container">
+                  <input type="checkbox"  value="One" />
+                  <span class="checkmark"></span> SONY
                 </label>
               </div>
             </div>
@@ -90,7 +102,7 @@
               <div v-for="product in products" class="new-items">
                 <div @click="onProductClick(product)">
                   <div class="new-items-img">
-                    <img :src="product.image" alt="" />
+                    <img :src="product.image" style="height: 210px; width: 210px;" />
                   </div>
                   <div class="new-items-data">
                     <a class="new-items-data--title" href="">
