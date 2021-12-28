@@ -14,7 +14,7 @@ const AppHeader = {
             <div class="header-menu"><a class="header-menu-title" href="">THƯƠNG HIỆU</a></div>
             <div class="header-menu"><a class="header-menu-title" href="">TIN TỨC</a></div>
             <div class="header-menu"><a class="header-menu-title" href="">KHUYẾN MÃI</a></div>
-            <div class="header-menu"><a class="header-menu-title" href="">LIÊN HỆ</a></div>
+            <div class="header-menu"><a class="header-menu-title" href="lienhe.html">LIÊN HỆ</a></div>
         </div>
         <div class="right">
 
@@ -114,16 +114,13 @@ const AppFooter = {
 
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <a href="#!" class="text-white">Link 1</a>
+                                <a href="#!" class="text-white">Về Ikus</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 2</a>
+                                <a href="#!" class="text-white">Thương hiệu</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 4</a>
+                                <a href="trangchu.html" class="text-white">Sản phẩm</a>
                             </li>
                         </ul>
                     </div>
@@ -135,19 +132,19 @@ const AppFooter = {
 
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <a href="#!" class="text-white">Link 1</a>
+                                <a href="#!" class="text-white">Chính sách giao hàng</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 2</a>
+                                <a href="#!" class="text-white">Bảo mật thông tin</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 3</a>
+                                <a href="#!" class="text-white">Đổi trả hàng</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 4</a>
+                                <a href="#!" class="text-white">Hướng dẫn mua hàng</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 5</a>
+                                <a href="#!" class="text-white">Hình thức thanh toán</a>
                             </li>
                         </ul>
                     </div>
@@ -159,10 +156,7 @@ const AppFooter = {
 
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <a href="#!" class="text-white">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 2</a>
+                                <a href="lienhe.html" class="text-white">Bản đồ</a>
                             </li>
                         </ul>
                     </div>

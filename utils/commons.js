@@ -1,5 +1,6 @@
 const STORAGE_KEY = {
   CART_ITEMS: "cart_items",
+  BILL_ITEMS: "bill_items",
   SESSIONS: "sessions",
   USERS: "users",
 };
@@ -29,6 +30,7 @@ function getPaginatedProducts({
   filterBy = {
     brand: "",
     type: "",
+    checkedBrands: [],
   },
   searchKey = "",
 }) {
@@ -38,8 +40,8 @@ function getPaginatedProducts({
   let data = PRODUCTS;
 
   // Filter data by criteria
-  if (filterBy.brand) {
-    data = data.filter((product) => product.brand === filterBy.brand);
+  if (filterBy.checkedBrands) {
+    data = data.filter(item => filterBy.checkedBrands.includes(item.brand));
   }
 
   if (filterBy.type) {
@@ -93,6 +95,21 @@ const commonStorage = {
   },
   removeItem(key) {
     localStorage.removeItem(key);
+  },
+};
+
+const billService = {
+  getBillItems() {
+    const billItems = commonStorage.getItem(STORAGE_KEY.BILL_ITEMS);
+
+    if (!billItems) {
+      return [];
+    }
+
+    return billItems;
+  },
+  addBillItems() {
+    const billItems = commonStorage.getItem(STORAGE_KEY.BILL_ITEMS);
   },
 };
 

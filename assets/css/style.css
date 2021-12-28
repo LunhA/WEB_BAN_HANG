@@ -889,6 +889,50 @@ html {
   width: 90%;
   border: none;
   border-bottom: solid 1px black;
+  margin: 0;
+  padding: 0;
+}
+
+.cart-table > li{
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+/* LIEN HE */
+.contact-container{
+  width: 70%;
+  height: 700px;
+  margin-top: 150px;
+  display: flex;
+}
+
+.contact-map{
+  width: 60%;
+  height: 700px;
+}
+
+.contact-info{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 22px;
+}
+
+.contact-info-address{
+  width: 100%;
+  height: 30%;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: solid 1px lightgray;
+}
+
+.contact-info-address >  h4{
+  color: black;
+  font-weight: 700;
 }
 
 
@@ -922,4 +966,8 @@ html {
   margin-top: 10px;
   height: 30px;
   width: 30px;
+}
+
+.text-white{
+  text-decoration: none;
 }

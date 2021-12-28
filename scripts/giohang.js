@@ -2,6 +2,7 @@ const GioHang = {
   data() {
     return {
       cartItems: [],
+      billItems: [],
     };
   },
   mounted() {
@@ -29,11 +30,20 @@ const GioHang = {
       cartService.removeCartItem(item);
       this.cartItems = cartService.getCartItems();
     },
+    onMakePayment() {
+      const tenKH = document.getElementById("tenKH").value;
+      const diachiKH = document.getElementById("diachiKH").value;
+      const sdtKH = document.getElementById("sdtKH").value;
+      const ghichuKH = document.getElementById("ghichuKH").value;
+
+      
+
+    },
+  },
     formatPrice(value) {
       let val = (value / 1).toFixed(0).replace(".", ",");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
-  },
 };
 
 const app = Vue.createApp(GioHang);

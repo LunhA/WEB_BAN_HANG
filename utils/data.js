@@ -106,7 +106,7 @@ const PRODUCTS = [{
     name: "Apple Airpod Proz VN/A",
     price: 4990000,
     type: PRODUCT_TYPE.TRUE_WIRELESS,
-    brand: PRODUCT_BRANDS.HIFIMAN.APPLE,
+    brand: PRODUCT_BRANDS.APPLE,
     image: "assets/images/products/airpod_pro.jpg",
   },
   {

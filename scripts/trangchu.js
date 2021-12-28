@@ -8,6 +8,7 @@ const TrangChu = {
       total: 0,
       sortBy: SORT_BY.NEWEST,
       selectedType: "",
+      checkedBrands: Object.values(PRODUCT_BRANDS), // biến cái const BRANDS thành mảng ở đây luôn
       searchKey: "",
     };
   },
@@ -17,6 +18,9 @@ const TrangChu = {
   computed: {
     productType() {
       return PRODUCT_TYPE;
+    },
+    productBrand() {
+      return PRODUCT_BRANDS;
     },
     productSort() {
       return SORT_BY;
@@ -43,6 +47,9 @@ const TrangChu = {
     searchKey() {
       this.onSearchKeyChange();
     },
+    checkedBrands() {
+      this.onBrandSelectionChange();
+    }
   },
   methods: {
     fetchData() {
@@ -51,11 +58,14 @@ const TrangChu = {
         pageSize: pageSize,
         filterBy: {
           type: this.selectedType,
+          checkedBrands: this.checkedBrands,
         },
         sortBy: this.sortBy,
         searchKey: this.searchKey,
       });
-
+      // Chỗ này là đang ở trong component Vue thì khi mình access vô data (state) 
+       // thì cần từ khoa this
+      console.log(this.checkedBrands);
       this.total = total;
       this.products = data;
     },
@@ -66,6 +76,10 @@ const TrangChu = {
     onSortChange(e) {
       const value = e.target.value;
       this.sortBy = value;
+      this.currentPage = 1;
+      this.fetchData();
+    },
+    onBrandSelectionChange() {
       this.currentPage = 1;
       this.fetchData();
     },

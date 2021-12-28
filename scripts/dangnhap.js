@@ -40,6 +40,9 @@ const DangNhap = {
       authService.logout();
       window.location.href = "trangchu.html";
     },
+    onRebill() {
+      window.location.href = "dathangthanhcong.html";
+    },
     onRegister() {
       if (!this.username || !this.password) {
         alert("Tên đăng nhập hoặc mật khẩu không được bỏ trống");
