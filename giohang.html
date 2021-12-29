@@ -29,19 +29,19 @@
             <div class="main-payment-info">
               <form action="" id="customer-info">
                 <label for="">Họ tên *</label><br />
-                <input type="text" class="user-input" id="tenKH" required /><br />
+                <input type="text" class="user-input" v-model="tenKH" required /><br />
                 <label for="">Địa chỉ *</label><br />
-                <input type="text" class="user-input" id="diachiKH" required /><br />
+                <input type="text" class="user-input" v-model="diachiKH" required /><br />
                 <label for="">Số điện thoại *</label><br />
                 <input
                   type="text"
                   class="user-input"
                   name=""
-                  id="sdtKH"
+                  v-model="sdtKH"
                   required
                 /><br />
                 <label for="">Ghi chú</label><br />
-                <input type="text" class="user-input" id="ghichuKH" /><br />
+                <input type="text" class="user-input" v-model="ghichuKH" /><br />
               </form>
             </div>
             <div class="main-payment-method main-payment-info">
@@ -64,7 +64,7 @@
           </div>
           <div class="cart-content">
             <div class="total">TỔNG TIỀN: {{ totalPrice }}</div>
-            <div class="complete-payment" @click="">THANH TOÁN</div>
+            <div class="complete-payment" @click="onPayment()">THANH TOÁN</div>
             <div class="line2"></div>
             <br />
             <div class="cart-list">

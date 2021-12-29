@@ -1,19 +1,35 @@
 const DonHang = {
     data() {
       return {
-        billItems: [],
+        payment: {
+            items: []
+        },
       };
     },
     mounted() {
-        this.billItems = cartService.getCartItems();
+        const payment = cartService.getPaymentInfo();
+        if (payment) {
+            this.payment = payment;
+        }
+    },  
+    computed: {
+        totalPrice() {
+            return this.formatPrice(
+              this.payment.items.reduce(
+                (previous, currentItem) => (previous += currentItem.price),
+                0
+              )
+            );
+          },
     },
-    method: {
+    methods: {
         formatPrice(value) {
             let val = (value / 1).toFixed(0).replace(".", ",");
             return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-          },
+        },
     }
 }
+
 
 const app = Vue.createApp(DonHang);
 app.component("app-header", AppHeader);

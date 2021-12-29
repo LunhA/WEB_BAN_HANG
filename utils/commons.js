@@ -3,6 +3,7 @@ const STORAGE_KEY = {
   BILL_ITEMS: "bill_items",
   SESSIONS: "sessions",
   USERS: "users",
+  PAYMENT: "payment",
 };
 
 const SORT_BY = {
@@ -33,6 +34,8 @@ function getPaginatedProducts({
     checkedBrands: [],
   },
   searchKey = "",
+  minPrice = "",
+  maxPrice = "",
 }) {
   const startIndex = pageIndex * pageSize;
   const endIndex = startIndex + pageSize;
@@ -52,6 +55,11 @@ function getPaginatedProducts({
   data = data.filter((product) =>
     product.name.toLowerCase().includes(searchKey.toLowerCase())
   );
+
+  //Filter data by price
+  data = data.filter((product) => product.price > minPrice);
+
+  data = data.filter((product) => product.price < maxPrice);
 
   // Sort data
   switch (sortBy) {
@@ -98,22 +106,14 @@ const commonStorage = {
   },
 };
 
-const billService = {
-  getBillItems() {
-    const billItems = commonStorage.getItem(STORAGE_KEY.BILL_ITEMS);
-
-    if (!billItems) {
-      return [];
-    }
-
-    return billItems;
-  },
-  addBillItems() {
-    const billItems = commonStorage.getItem(STORAGE_KEY.BILL_ITEMS);
-  },
-};
-
 const cartService = {
+  getPaymentInfo() {
+    const payment = commonStorage.getItem(STORAGE_KEY.PAYMENT);
+    return payment;
+  },
+  addPaymentInfo(item) {
+    commonStorage.setItem(STORAGE_KEY.PAYMENT, item);
+  },
   getCartItems() {
     const cartItems = commonStorage.getItem(STORAGE_KEY.CART_ITEMS);
 
@@ -148,6 +148,7 @@ const cartService = {
     commonStorage.removeItem(STORAGE_KEY.CART_ITEMS);
   },
 };
+
 const authService = {
   getSession() {
     const session = commonStorage.getItem(STORAGE_KEY.SESSIONS);

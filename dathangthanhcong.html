@@ -18,16 +18,16 @@
 
         <div class="main-container">
             <div class="bill-review">
-                <h2 title>ĐẶT HÀNG THÀNH CÔNG</h2>
+                <h2 title>THÔNG TIN ĐƠN HÀNG</h2>
                 <div class="bill-body">
                     <span class="customer-title">Tên khách hàng:</span>
-                    <span class="bill-info">Nguyen Van A</span>
+                    <span class="bill-info">{{ payment.tenKH }}</span>
                     <span class="customer-title">Số điện thoại:</span>
-                    <span class="bill-info">Nguyen Van A</span>
+                    <span class="bill-info">{{ payment.sdtKH }}</span>
                     <span class="customer-title">Địa chỉ:</span>
-                    <span class="bill-info">Nguyen Van A</span>
+                    <span class="bill-info">{{ payment.diachiKH }}</span>
                     <span class="customer-title">Ghi chú:</span>
-                    <span class="bill-info">Nguyen Van A</span>
+                    <span class="bill-info">{{ payment.ghichuKH }}</span>
                     <div class="line2"></div>
                     <ul class="cart-table">
                         <li>
@@ -38,15 +38,15 @@
                         </li>
                     </ul>
                     <ul class="cart-table">
-                        <li>
-                            <div style="display: flex; justify-content: left;">1</div>
-                            <div style="margin-left: 6.5%; width: 25%;"><img src="assets/images/products/moondrop_kxxs.jpg"
-                                    style="height: 100px;"> Moondrop KXXS
+                        <li v-for="(item, index) in payment.items">
+                            <div style="display: flex; justify-content: left;">{{ index + 1}}</div>
+                            <div style="margin-left: 6.5%; width: 25%;"><img :src="item.image"
+                                    style="height: 100px;"> {{ item.name }}
                             </div>
-                            <div style="margin-left: 26%;">3.350.000 đ</div>
+                            <div style="margin-left: 26%;">{{ formatPrice(item.price) }} đ</div>
                         </li>
                     </ul>
-                    <h3 style="margin-top: 20px;">TỔNG CỘNG: </h2>
+                    <h3 style="margin-top: 20px;">TỔNG CỘNG: {{ totalPrice }} đ</h2>
                 </div>
             </div>
         </div>
@@ -61,6 +61,6 @@
 <script src="utils/data.js"></script>
 <script src="utils/commons.js"></script>
 <script src="scripts/components.js"></script>
-<script src="scripts/giohang.js"></script>
+<script src="scripts/dathangthanhcong.js"></script>
 
 </html>

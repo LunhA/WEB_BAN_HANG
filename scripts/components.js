@@ -11,9 +11,7 @@ const AppHeader = {
             <div class="header-menu"><a class="header-menu-title" href="trangchu.html">SẢN PHẨM</a>
 
             </div>
-            <div class="header-menu"><a class="header-menu-title" href="">THƯƠNG HIỆU</a></div>
-            <div class="header-menu"><a class="header-menu-title" href="">TIN TỨC</a></div>
-            <div class="header-menu"><a class="header-menu-title" href="">KHUYẾN MÃI</a></div>
+            
             <div class="header-menu"><a class="header-menu-title" href="lienhe.html">LIÊN HỆ</a></div>
         </div>
         <div class="right">

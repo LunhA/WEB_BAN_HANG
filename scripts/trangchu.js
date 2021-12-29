@@ -10,6 +10,8 @@ const TrangChu = {
       selectedType: "",
       checkedBrands: Object.values(PRODUCT_BRANDS), // biến cái const BRANDS thành mảng ở đây luôn
       searchKey: "",
+      minPrice: "0",
+      maxPrice: "100000000",
     };
   },
   mounted() {
@@ -44,6 +46,12 @@ const TrangChu = {
     },
   },
   watch: {
+    minPrice() {
+      this.onPriceChange();
+    },
+    maxPrice() {
+      this.onPriceChange();
+    },
     searchKey() {
       this.onSearchKeyChange();
     },
@@ -62,6 +70,8 @@ const TrangChu = {
         },
         sortBy: this.sortBy,
         searchKey: this.searchKey,
+        minPrice: this.minPrice,
+        maxPrice: this.maxPrice,
       });
       // Chỗ này là đang ở trong component Vue thì khi mình access vô data (state) 
        // thì cần từ khoa this
@@ -70,6 +80,10 @@ const TrangChu = {
       this.products = data;
     },
     onSearchKeyChange() {
+      this.currentPage = 1;
+      this.fetchData();
+    },
+    onPriceChange() {
       this.currentPage = 1;
       this.fetchData();
     },
