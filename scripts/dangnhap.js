@@ -38,6 +38,7 @@ const DangNhap = {
     },
     onLogout() {
       authService.logout();
+      commonStorage.setItem(STORAGE_KEY.PAYMENT, null);
       window.location.href = "trangchu.html";
     },
     onRebill() {
