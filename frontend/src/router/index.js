@@ -5,6 +5,7 @@ import ChiTietSanPham from '@/views/ChiTietSanPham.vue';
 import GioHang from '@/views/GioHang.vue';
 import DangNhap from '@/views/DangNhap.vue';
 import DatHangThanhCong from '@/views/DatHangThanhCong.vue';
+import LienHe from '@/views/LienHe.vue';
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: '/dathangthanhcong',
     name: 'DatHangThanhCong',
     component: DatHangThanhCong,
+  },
+  {
+    path: '/lienhe',
+    name: 'LienHe',
+    component: LienHe,
   },
   // {
   //   path: "/about",

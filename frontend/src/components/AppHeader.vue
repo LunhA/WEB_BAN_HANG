@@ -12,10 +12,11 @@
         </div>
 
         <div class="header-menu">
-          <a class="header-menu-title" href="lienhe.html">LIÊN HỆ</a>
+          <router-link class="header-menu-title" to="/lienhe"
+            >LIÊN HỆ</router-link>
         </div>
       </div>
-      <div class="right">
+      <div class="right"> 
         <div class="navbar-btn login-icon">
           <router-link
             custom
