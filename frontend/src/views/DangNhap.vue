@@ -106,13 +106,13 @@ export default {
     },
   },
   methods: {
-    onLogin() {
+    async onLogin() {
       if (!this.username || !this.password) {
         alert('Tên đăng nhập hoặc mật khẩu không được bỏ trống');
         return;
       }
 
-      const result = authService.login({
+      const result = await  authService.login({
         username: this.username,
         password: this.password,
       });
