@@ -1,0 +1,6 @@
+pip install Flask
+pip install Flask_Cors
+pip install Werkzeug
+pip install jwt
+pip install Flask_RESTful
+
