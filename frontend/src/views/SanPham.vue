@@ -76,8 +76,8 @@
             >
               <option :value="productSort.NEWEST">Mới nhất</option>
               <option :value="productSort.OLDEST">Cũ Nhất</option>
-              <option :value="productSort.PRICE_HIGH">Từ thấp tới cao</option>
-              <option :value="productSort.PRICE_LOW">Từ cao tới thấp</option>
+              <option :value="productSort.PRICE_HIGH">Từ cao tới thấp</option>
+              <option :value="productSort.PRICE_LOW">Từ thấp tới cao</option>
             </select>
           </div>
         </div>

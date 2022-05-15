@@ -62,7 +62,7 @@
             <li :key="i" v-for="(item, i) in cartItems">
               <div class="cart-list-item">
                 <span>{{ i + 1 }}.</span>
-                <img :src="item.image" />
+                <img :src="item.img" />
                 {{ item.name }} | {{ formatPrice(item.price) }}
                 <div class="delete-item" @click="onRemoveItem(item)">
                   <img src="assets/images/icons/bin.png" alt="" />

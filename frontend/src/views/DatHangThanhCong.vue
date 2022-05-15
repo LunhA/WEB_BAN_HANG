@@ -25,7 +25,7 @@
               {{ index + 1 }}
             </div>
             <div style="margin-left: 6.5%; width: 25%">
-              <img :src="item.image" style="height: 100px" /> {{ item.name }}
+              <img :src="item.img" style="height: 100px" /> {{ item.name }}
             </div>
             <div style="margin-left: 26%">{{ formatPrice(item.price) }} đ</div>
           </li>
