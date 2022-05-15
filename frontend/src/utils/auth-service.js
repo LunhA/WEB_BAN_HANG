@@ -1,5 +1,5 @@
 import { STORAGE_KEY } from '@/consts/commons';
-import { loginApi } from './api-service';
+import { loginApi, registerApi } from './api-service';
 import { commonStorage } from './storage-service';
 
 export const authService = {
@@ -19,30 +19,47 @@ export const authService = {
 
     return user;
   },
-  register({ username, password }) {
+  async register({ username, password }) {
     if (!username || !password) {
       return { ok: false };
     }
 
-    let users = commonStorage.getItem(STORAGE_KEY.USERS);
+    try {
+      await registerApi({ username, password });
 
-    const newUser = { username, password, createdAt: new Date().getTime() };
-
-    if (users) {
-      users.push(newUser);
-    } else {
-      users = [newUser];
+      const newUser = { username, password, createdAt: new Date().getTime() };
+      return {
+        ok: true,
+        user: {
+          username: newUser.username,
+          createdAt: newUser.createdAt,
+        },
+      };
+    } catch (err) {
+      return {
+        ok: false,
+      };
     }
 
-    commonStorage.setItem(STORAGE_KEY.USERS, users);
+    // let users = commonStorage.getItem(STORAGE_KEY.USERS);
 
-    return {
-      ok: true,
-      user: {
-        username: newUser.username,
-        createdAt: newUser.createdAt,
-      },
-    };
+    // const newUser = { username, password, createdAt: new Date().getTime() };
+
+    // if (users) {
+    //   users.push(newUser);
+    // } else {
+    //   users = [newUser];
+    // }
+
+    // commonStorage.setItem(STORAGE_KEY.USERS, users);
+
+    // return {
+    //   ok: true,
+    //   user: {
+    //     username: newUser.username,
+    //     createdAt: newUser.createdAt,
+    //   },
+    // };
   },
   async login({ username, password }) {
     if (!username || !password) {

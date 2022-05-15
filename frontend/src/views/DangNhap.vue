@@ -112,7 +112,7 @@ export default {
         return;
       }
 
-      const result = await  authService.login({
+      const result = await authService.login({
         username: this.username,
         password: this.password,
       });
@@ -133,13 +133,13 @@ export default {
     onRebill() {
       this.$router.push('/dathangthanhcong');
     },
-    onRegister() {
+    async onRegister() {
       if (!this.username || !this.password) {
         alert('Tên đăng nhập hoặc mật khẩu không được bỏ trống');
         return;
       }
 
-      const result = authService.register({
+      const result = await authService.register({
         username: this.username,
         password: this.password,
       });

@@ -2,7 +2,7 @@
   <div class="main-container">
     <div v-if="product" class="item-detail">
       <div class="item-detail-img">
-        <img :src="product.image" alt="" />
+        <img :src="product.img" alt="product img" />
       </div>
       <div class="item-detail-info">
         <h2 class="title">{{ product.name }}</h2>
@@ -45,7 +45,7 @@ export default {
     };
   },
   watch: {
-    $route(to, from) {
+    $route() {
       this.getProductData();
     },
   },
@@ -53,10 +53,13 @@ export default {
     this.getProductData();
   },
   methods: {
-    getProductData() {
+    async getProductData() {
       const productId = this.$route.params.id;
-      const product = getProductById(productId);
+      const product = await getProductById(productId);
 
+      // Backend phân biệt mỗi item khi xuống hàng bằng dấu phẩy
+      const symbolToBeSplitted = ',';
+      product.descriptions = product.descriptions.split(symbolToBeSplitted);
       this.product = product;
     },
     formatPrice(value) {

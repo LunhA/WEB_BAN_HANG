@@ -167,7 +167,8 @@
               <div @click="onProductClick(product)">
                 <div class="new-items-img">
                   <img
-                    :src="product.image"
+                    :src="product.img"
+                    alt="product img"
                     style="height: 210px; width: 210px"
                   />
                 </div>
@@ -207,7 +208,6 @@
 import { PRODUCT_BRANDS, PRODUCT_TYPE } from '@/consts/product';
 import { SORT_BY } from '@/consts/commons';
 import {
-  getProductById,
   getPaginatedProducts,
 } from '@/utils/product-service.js';
 
@@ -275,8 +275,8 @@ export default {
     },
   },
   methods: {
-    fetchData() {
-      const { total, data } = getPaginatedProducts({
+    async fetchData() {
+      const { total, data } = await getPaginatedProducts({
         pageIndex: this.currentPage - 1,
         pageSize: pageSize,
         filterBy: {
@@ -288,9 +288,6 @@ export default {
         minPrice: this.minPrice,
         maxPrice: this.maxPrice,
       });
-      // Chỗ này là đang ở trong component Vue thì khi mình access vô data (state)
-      // thì cần từ khoa this
-      console.log(this.checkedBrands);
       this.total = total;
       this.products = data;
     },
@@ -323,7 +320,7 @@ export default {
       this.fetchData();
     },
     onProductClick(product) {
-      this.$router.push(`/sanpham/${product.id}`)
+      this.$router.push(`/sanpham/${product.id}`);
     },
     onNextPage() {
       if (this.canNextPage) {

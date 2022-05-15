@@ -1,43 +1,42 @@
-const BASE_URL = 'http://localhost:5000';
+import axios from 'axios';
 
-const API_HEADER = {
-  mode: 'cors', // no-cors, *cors, same-origin
-  cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-  credentials: 'same-origin', // include, *same-origin, omit
-  headers: {
-    'Content-Type': 'application/json',
-    // 'Content-Type': 'application/x-www-form-urlencoded',
+const axiosInstance = axios.create({
+  baseURL: `http://localhost:5000`,
+});
+
+axiosInstance.interceptors.request.use(
+  (config) => {
+    return config;
   },
-  redirect: 'follow', // manual, *follow, error
-  referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-};
+  (error) => {
+    // handle the error
+    return Promise.reject(error);
+  }
+);
 
-async function getData(url = '', data = {}) {
-  // Default options are marked with *
-  const response = await fetch(url, {
-    ...API_HEADER,
-    method: 'GET', // *GET, POST, PUT, DELETE, etc.
-    body: JSON.stringify(data), // body data type must match "Content-Type" header
-  });
-  return response.json(); // parses JSON response into native JavaScript objects
-}
-async function postData(url = '', data = {}) {
-  // Default options are marked with *
-  const response = await fetch(url, {
-    ...API_HEADER,
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    body: JSON.stringify(data), // body data type must match "Content-Type" header
-  });
-  return response.json(); // parses JSON response into native JavaScript objects
-}
+axiosInstance.interceptors.response.use(
+  (response) => {
+    return response.data;
+  },
+  (error) => {
+    // handle the response error
+    return Promise.reject(error);
+  }
+);
 
 export function loginApi({ username, password }) {
-  return postData(BASE_URL + '/login', {
-    username,
-    password,
-  });
+  return axiosInstance.post('/login', { username, password });
 }
 
-export function getPaginatedProducts(params) {
-  return;
+export function registerApi({ username, password}) {
+  return axiosInstance.post('/register', { username, password });
 }
+
+export function getPaginatedProductsApi(params) {
+  return axiosInstance.post('/items', params);
+}
+
+export function getProductByIdApi(id) {
+  return axiosInstance.get('/item/' + id);
+}
+

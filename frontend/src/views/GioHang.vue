@@ -97,7 +97,7 @@ export default {
     this.getCartData();
   },
   watch: {
-    $route(to, from) {
+    $route() {
       this.getCartData();
     },
   },
