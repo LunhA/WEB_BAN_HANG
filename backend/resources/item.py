@@ -22,7 +22,7 @@ class Item(Resource):
 
 
 class itemList(Resource):
-    def get(self):
+    def post(self):
         pageIndex = request.json['pageIndex']
         pageSize = request.json['pageSize']
         sortBy = request.json['sortBy']
@@ -30,7 +30,7 @@ class itemList(Resource):
         minPrice = request.json['minPrice']
         maxPrice = request.json['maxPrice']
         filterBy = request.json['filterBy']
-        type = filterBy.get('type')
+        selectedType = filterBy.get('type')
         checkedBrands = filterBy.get('checkedBrands')
         
         
@@ -39,18 +39,19 @@ class itemList(Resource):
         connection = sqlite3.connect('data.db')
         cursor = connection.cursor()
 
-        query = 'SELECT * FROM items '
-
-        if type is not None:
-            typeString = "'" + type + "'"
-        
-            query += f' WHERE type in ({typeString}) '
+        query = 'SELECT * FROM items WHERE'
 
         if checkedBrands is not None:
             checkedBrandStrings = ','.join(
             map((lambda brand: "'" + brand + "'"), checkedBrands))
 
-            query += f' AND brand in ({checkedBrandStrings}) '
+            query += f' brand in ({checkedBrandStrings}) '
+
+        if selectedType == "":
+            pass
+        else:
+            typeString = "'" + selectedType + "'"
+            query += f' AND type in ({typeString}) '
 
         if searchKey == "":
             pass
@@ -62,6 +63,7 @@ class itemList(Resource):
         query = ItemModel.sortQuery(sortBy, query)
         query += f' LIMIT {pageSize} OFFSET {startIndex}'
 
+        print(query)
         result = cursor.execute(query)
         items = []
         for row in result:
